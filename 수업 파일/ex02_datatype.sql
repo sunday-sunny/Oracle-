@@ -1,9 +1,9 @@
-/*
 -- ex02_datatype.sql
 
-ANSI-SQL 자료형
+/* ANSI-SQL 자료형
 - 오라클 자료형
 - 데이터베이스 > 데이터 취급 > 자료형 존재
+
 
 1. 숫자형
     - 정수, 실수
@@ -27,7 +27,6 @@ ANSI-SQL 자료형
                 2. 실수 : 3.14
                 
                 
-
 2. 문자형
     - 문자 + 문자열
     - 자바의 String과 유사
@@ -79,8 +78,7 @@ ANSI-SQL 자료형
     a. DATE
         - 년월일시분초
         - 7바이트
-        - 기원전 4712년 1월 1일 ~ 9999년 12월 31일
-        
+        - 기원전 4712년 1월 1일 ~ 9999년 12월 31일       
         
     b. TIMESTAMP
         - 년월일시분초 + 밀리초(나노초)
@@ -89,6 +87,7 @@ ANSI-SQL 자료형
         - 시간
         - 틱값 저장용
 
+
 4. 이진 데이터형
     - 비 텍스트 데이터
     - 이미지, 영상, 음악, 파일 등..
@@ -96,17 +95,16 @@ ANSI-SQL 자료형
     a. blob
         - 최대 128TB
         
-결론
-1. 숫자 > number
-2. 문자 > varchar2
-3. 날짜 > date
+        
+*** 결론 ***
+    1. 숫자 > number
+    2. 문자 > varchar2
+    3. 날짜 > date
 
 
 */
 
 -- 테이블 선언(생성)
--- 테이블 삭제
-
 create table 테이블명 (
     속성(컬럼) 선언
     컬럼명 자료형(도메인) 제약사항
@@ -122,10 +120,12 @@ create table tblType(
 
 -- 테이블 삭제
 drop table 테이블명;
-drop  table tblType;
+drop table tblType;
+
 
 -- 테이블에서 데이터 가져오기
 select * from tblType;
+
 
 -- 데이터 추가
 -- 현재 number(3) -> 소수 이하 날라가버림 주의!
@@ -138,7 +138,6 @@ insert into tblType(num) values (3.123456);
 select * from hr.tblType;  -- system 계정으로 hr의 table을 볼 수 있음
 
 insert into tblType(txt) values('ABC');
-
 insert into tblType(txt1, txt2) values ('ABC', 'ABC');
 insert into tblType(txt1, txt2) values ('ABCDEFGHIJ', 'ABCDEFGHIJ');
 insert into tblType(txt1, txt2) values ('홍길동', '홍길동');
